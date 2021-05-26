@@ -7,6 +7,7 @@
 	  	<div class="tabbar" :class="{'active': tab==3}" @click="switchtab(3)">个人博客</div>
 	  	<div class="tabbar" :class="{'active': tab==4}" @click="switchtab(4)">个人愿景</div>
 	  </div>
+	  <div class="bar-position"></div>
       <!-- 路由匹配到的组件将渲染在这里 -->
       <router-view></router-view>
   </div>
@@ -30,10 +31,13 @@ export default {
 		 	this.$router.push('/education')
 		 }
 		 if(tab==2){
-		 	this.$router.push('/')
+		 	this.$router.push('/project')
 		 }
 		 if(tab==3){
-		 	this.$router.push('/')
+		 	this.$router.push('/blog')
+		 }
+		 if(tab==4){
+		 	this.$router.push('/resume')
 		 }
 	  }
   }
@@ -51,6 +55,15 @@ export default {
   width: 100%;
   margin: 0;
   padding: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(./assets/bg1.jpg);
+  overflow: hidden;
+}
+
+*{
+	margin: 0;
+	padding: 0;
 }
 
 html,body{
@@ -69,6 +82,11 @@ html,body{
   height: 60px;
   width: 100%;
   margin: 0 auto;
+}
+
+.bar-position{
+  height: 60px;
+  width: 100%;	
 }
 
 .tabbar{

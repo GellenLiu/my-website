@@ -15,6 +15,21 @@ export default new Router({
 	  	path: '/education',
 	  	name: 'education',
 	  	component: education
+	  },
+	  {
+	  	path: '/blog',
+	  	name: 'blog',
+	  	component: (resolve) => require(['../pages/blog'],resolve)
+	  },
+	  {
+	  	path: '/project',
+	  	name: 'project',
+	  	component: (resolve) => require(['../pages/project'],resolve)
+	  },
+	  {
+	  	path: '/resume',
+	  	name: 'resume',
+	  	component: (resolve) => require(['../pages/resume'],resolve)
 	  }
     ]
 })

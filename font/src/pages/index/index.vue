@@ -51,6 +51,7 @@ export default {
 
 .title{
   height: 80px;
+  width: 100%;
   margin: 30px 0 0 100px;
   font-family: "arial rounded mt bold";
   font-size: 60px;
