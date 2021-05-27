@@ -53,11 +53,12 @@ export default {
   color: #2c3e50;
   height: 100%;
   width: 100%;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(./assets/bg1.jpg);
+  background-color: #000000;
+  /* background-image: url(./assets/black.png); */
   overflow: hidden;
 }
 
