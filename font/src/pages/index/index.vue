@@ -13,6 +13,14 @@
 			<img src="../../../public/qihang.png"/>
 			<div class="right-wing"></div>
 		</div>
+<!-- 	<div class="ball-box">
+			<div class="ball"></div>
+		</div> -->
+		<!-- <div class="trans">
+			
+		</div> -->
+		 
+ 
 	</div>
 </template>
 
@@ -34,6 +42,7 @@ export default {
 
 <style scoped>
 .page{
+  position: relative;
   display: flex;	
   height: 668px;
   width: 1366px;
@@ -85,6 +94,7 @@ export default {
   height: 600px;
   width: 380px;	
   margin: 40px 0 0 0;
+  z-index: 1;
 }
 
 .fly{
@@ -95,33 +105,118 @@ export default {
   height: 50px;
   width: 150px;
   animation-name: move;
-  animation-duration: 10s;
+  animation-duration: 20s;
+  animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 
 @keyframes move{
 	0%{
-		top: 10px;
-		left: 100px;
+		top: 150px;
+		left: 750px;
+		z-index: 2;
+	}
+	5%{
+		top: 200px;
+		left: 800px;
+		z-index: 2;
+	}
+	10%{
+		top: 220px;
+		left: 855px;
+		z-index: 2;
+	}
+	20%{
+		top: 230px;
+		left: 905px;
+		z-index: 2;
+	}
+	25%{
+		top: 250px;
+		left: 950px;
+		z-index: 2;
+	}
+	30%{
+		top: 240px;
+		left: 1000px;
+		z-index: 2;
+	}
+	40%{
+		top: 200px;
+		left: 1050px;
+		z-index: 2;
+	}
+		
+	45%{
+		top: 180px;
+		left: 1100px;
+		z-index: 2;
+	}
+	50%{
+		top: 150px;
+		left: 1150px;
+		z-index: 2;
+		/* transform: rotateY(60deg); */
+	}
+	60%{
+		top: 130px;
+		left: 1100px;
+		z-index: 0;
+	}
+	70%{
+		top: 120px;
+		left: 1050px;
+		z-index: 0;
+	}
+	75%{
+		top: 100px;
+		left: 1000px;
+		z-index: 0;
+	}
+	80%{
+		top: 110px;
+		left: 950px;
+		z-index: 0;
+	}
+	85%{
+		top: 120px;
+		left: 900px;
+		z-index: 0;
+	}
+	90%{
+		top: 130px;
+		left: 850px;
+		z-index: 0;
+	}
+	95%{
+		top: 140px;
+		left: 800px;
+		z-index: 0;
 	}
 	100%{
-		top: 100px;
-		left: 300px;
+		top: 150px;
+		left: 750px;
 	}
 	to{}
 }
 	
 .fly img{
   height: 33px;
-  width: 24px;
+  width: 33px;
 }
 
+
 .left-wing{
-   width: 0;
-   height: 0;
-   border-top: 5px solid transparent;
+ position: relative;
+  left: 4px;
+  width: 2px;
+  height: 2px;
+   /* border-radius: 50% 20% 20% 50%; */
+   /* transform: scale(1.5,.5); */
+   /* background-color: #FFFFFF; */
+  border-top: 10px solid transparent;
    border-right: 40px solid white;
-   border-bottom: 5px solid transparent;
+   border-bottom: 10px solid transparent;
    transform-origin: right;
    animation-name: fly;
    animation-duration: 0.002s;
@@ -129,11 +224,11 @@ export default {
 }
 
 .right-wing{
-   width: 0;
-   height: 0;
-   border-top: 5px solid transparent;
+   width: 2px;
+   height: 2px;
+   border-top: 10px solid transparent;
    border-left: 40px solid white;
-   border-bottom: 5px solid transparent;
+   border-bottom: 10px solid transparent;
    transform-origin: left;
    animation-name: fly;
    animation-duration: 0.002s;
@@ -146,16 +241,127 @@ export default {
 	}
 	25%{
 		transform: rotate(30deg);
+		border-bottom: 5px solid transparent;
+		border-top: 5px solid transparent;
 	}
 	50%{
 		transform: rotate(0deg);
+		
 	}
 	75%{
 		transform: rotate(-30deg);
+		border-bottom: 5px solid transparent;
+		border-top: 5px solid transparent;
 	}
 	100%{
 		transform: rotate(0deg);
 	}
 }
 
+.ball-box{
+	position: absolute;
+	left: 900px;
+	top: 500px;
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+	animation: movey 4s infinite linear;
+	/* transform-origin: 100px 0 0; */
+}
+
+.ball{
+  
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-image: url(../../assets/ball.png);
+  animation: circle 4s infinite linear;
+  transform-origin: 100px 50%;
+  transform-style: preserve-3d;
+}
+
+
+/* 平面旋转 */
+@keyframes circle{
+	from{
+		transform: rotate(0);
+	}
+	25%{
+		z-index: 0;
+	}
+	50%{
+		z-index: 0;
+	}
+	75%{
+		z-index: 2;
+	}
+	to{
+		z-index: 2;
+		transform: rotate(360deg) ;
+	}
+}
+/* 3D旋转 */
+@keyframes circle3d{
+	from{
+		transform: rotateY(0);
+
+	}
+	25%{
+		z-index: 2;
+	
+	}
+	50%{
+		z-index: 2;
+	
+	}
+	75%{
+		z-index: 0;
+	}
+	to{
+		z-index: 0;
+		transform: rotateY(360deg);
+	}
+}
+
+
+@keyframes movey{
+		
+	0%{
+		transform: translate(0,0);
+	}
+	25%{
+		transform: translate(0,50px);
+	}
+	50%{
+		transform: translate(0,0);
+	}
+	75%{
+		transform: translate(0,-50px);
+	}
+	100%{
+		transform: translate(0,0);
+	}
+}
+
+
+	
+.trans{
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	background-color: #F4F5F5;
+	animation: scale 2s infinite linear;
+}
+
+@keyframes scale{
+	from{
+		transform: scale(1,1);
+	}
+	50%{
+		transform: scale(.5,.5);
+	}
+	to{
+		transform: scale(1.5,1.5);
+	}
+}
 </style>

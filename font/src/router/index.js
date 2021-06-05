@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 Vue.use(Router)
 
-import education from '../pages/education.vue'
+import photo from '../pages/photo.vue'
 
 export default new Router({
   routes: [
@@ -12,9 +12,9 @@ export default new Router({
 		component: (resolve) => require(['../pages/index/index'],resolve)
 	  },
 	  {
-	  	path: '/education',
-	  	name: 'education',
-	  	component: education
+	  	path: '/photo',
+	  	name: 'photo',
+	  	component: photo
 	  },
 	  {
 	  	path: '/blog',

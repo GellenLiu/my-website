@@ -6,14 +6,14 @@
 		    <div>日常动态</div>
 		</div>
 		<div class="article-list">
-			<div class="article" v-for="article in articles">
+		    <div class="article" v-for="article in articles" v-bind:key="article">
 				<img src="../assets/logo.png"/>
 				<div>
 					<div class="title">{{article.title}}</div>
 					<div class="describe">{{article.describe}}</div>
 				</div>
 				<div class="data">
-					<div><img src="../assets/点赞.png"></div>
+					<div @click="agree"><img src="../assets/点赞.png"></div>
 					<div><img src="../assets/问答.png"/></div>
 					<div><img src="../assets/分享.png"/></div>
 				</div>
@@ -43,7 +43,9 @@ export default {
 		}
 	},
 	methods:{
-		
+		agree(){
+			
+		}
 	}
 }	
 </script>
@@ -67,29 +69,35 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 200px;
-  width: 120px;
+  height: 400px;
+  width: 400px;
   text-align: center;
-  background-color: #aaffff;
+  /* background-color: #aaffff; */
+  background-image: url(../assets/img/borderimg.png);
 }
 
 .options div{
   height: 50px;
-  width: 100%;
+  width: 150px;
+  margin: 0 0 0 100px;
+  border-radius: 15px;
   font-size: 25px;
   line-height: 50px;
+  font-weight: bold;
   text-align: center;
   color: #000000;
 }
 
 .options div:hover{
-  background-color: #FFAA00;
+  font-size: 30px;
+  background-color: #fde98f;
 }
 
 .article-list{
   width: 800px;
   margin: 0 auto;
   background-color: #f4f5f5;
+  /* overflow: scroll; */
 }
 
 .article{

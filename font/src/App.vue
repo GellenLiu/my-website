@@ -2,10 +2,10 @@
   <div id="app">
 	  <div class="navigation-bar">
 	  	<div class="tabbar" :class="{'active': tab==0}" @click="switchtab(0)">首页</div>
-	  	<div class="tabbar" :class="{'active': tab==1}" @click="switchtab(1)">教育经历</div>
-	  	<div class="tabbar" :class="{'active': tab==2}" @click="switchtab(2)">项目经历</div>
-	  	<div class="tabbar" :class="{'active': tab==3}" @click="switchtab(3)">个人博客</div>
-	  	<div class="tabbar" :class="{'active': tab==4}" @click="switchtab(4)">个人愿景</div>
+	  	<div class="tabbar" :class="{'active': tab==1}" @click="switchtab(1)">项目经历</div>
+	  	<div class="tabbar" :class="{'active': tab==2}" @click="switchtab(2)">个人博客</div>
+	  	<div class="tabbar" :class="{'active': tab==3}" @click="switchtab(3)">个人简历</div>
+	  	<div class="tabbar" :class="{'active': tab==4}" @click="switchtab(4)">我的相册</div>
 	  </div>
 	  <div class="bar-position"></div>
       <!-- 路由匹配到的组件将渲染在这里 -->
@@ -28,16 +28,16 @@ export default {
 			this.$router.push('/')
 		 }
 		 if(tab==1){
-		 	this.$router.push('/education')
-		 }
-		 if(tab==2){
 		 	this.$router.push('/project')
 		 }
-		 if(tab==3){
+		 if(tab==2){
 		 	this.$router.push('/blog')
 		 }
-		 if(tab==4){
+		 if(tab==3){
 		 	this.$router.push('/resume')
+		 }
+		 if(tab==4){
+		 	this.$router.push('/photo')
 		 }
 	  }
   }
@@ -59,7 +59,7 @@ export default {
   background-repeat: no-repeat;
   background-color: #000000;
   /* background-image: url(./assets/black.png); */
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 *{
@@ -83,11 +83,13 @@ html,body{
   height: 60px;
   width: 100%;
   margin: 0 auto;
+  background-color: rgba(0, 0, 0, .6);
+  z-index: 3;
 }
 
 .bar-position{
   height: 60px;
-  width: 100%;	
+  width: 100%;
 }
 
 .tabbar{
