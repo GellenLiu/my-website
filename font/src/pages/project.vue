@@ -26,26 +26,30 @@
 		<!-- 项目 -->
 		<div class="project-list">
 			<ProjectItme 
-			v-for="(n,index) in 11"
+			v-for="(item,index) in projectList"
 			:key="index"
 			class="project-item"
-			name="小说阅读器"
-			company="Tencent"
-			role="UI开发"
-			introduction="1234124134"
-			time="2021/6/5"
+			:name="item.name"
+			:company="item.company"
+			:role="item.role"
+			:introduction="item.introduction"
+			:time="item.time"
 			></ProjectItme>
 		</div>
-	
+		<!-- 底部 -->
+	    <BaseFoot></BaseFoot>
 	</div>
 </template>
 
 <script>
 import ProjectItme from '../components/ProjectItem.vue'
+import BaseFoot from '../components/BaseFoot.vue'
+import projectList from '../assets/data/projectList.json'
 export default{
 	data(){
 		return{
-			fold: true
+			fold: true,
+			projectList: projectList
 		}
 	},
 	components:{

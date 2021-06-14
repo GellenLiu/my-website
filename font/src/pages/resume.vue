@@ -1,7 +1,8 @@
 <template>
 	<div class="page">
 		<div class="resume">
-			<div class="title">个人简历</div>
+			<img src="" alt="简历"/>
+			<!-- <div class="title">个人简历</div>
 		    <div class="subtitle">基本信息</div>
 		    <div class="content-box">
 				<span>姓名：</span>{{name}}
@@ -24,7 +25,7 @@
 		    <div class="content-box"></div>
 		    <div class="subtitle">技能特长</div>
 		    <div class="content-box"></div>
-		    <div class="subtitle">自我评价</div>
+		    <div class="subtitle">自我评价</div> -->
 		</div>
 		
 	</div>
@@ -45,14 +46,21 @@ export default{
 .page{
   display: flex;
   flex-direction: column;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .resume{
   /* height: ; */
+  height: 1000px;
   width: 700px;
   background-color: #FFFFFF;
   margin: 0 auto;
+  overflow: hidden;
+}
+
+.resume img{
+  height: 100%;
+  width: 100%;
 }
 
 .title{
